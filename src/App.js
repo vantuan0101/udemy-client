@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import publicRoutes from "./routes";
 const checkChildren = (children, index) => {
-  if (children.children) {
+  if (children?.children && children?.children.length > 0) {
     return (
       <Route key={index} path={children.path} element={children.element}>
         {children.children.map((child, indx) => {
@@ -13,11 +13,10 @@ const checkChildren = (children, index) => {
         })}
       </Route>
     );
-  } else {
-    return (
-      <Route key={index} path={children.path} element={children.element} />
-    );
-  }
+  } 
+  return (
+    <Route key={index} path={children.path} element={children.element} />
+  );
 };
 function App() {
   useEffect(() => {

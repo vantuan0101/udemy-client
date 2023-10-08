@@ -1,9 +1,9 @@
-import { Fragment } from "react";
+import MainLayout from "./layout/MainLayout";
 
 const publicRoutes = [
   {
     path: "/",
-    element: <Fragment/>,
+    element: <MainLayout/>,
     children: [
     ],
   },
